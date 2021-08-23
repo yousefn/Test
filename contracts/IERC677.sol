@@ -10,7 +10,7 @@ interface IERC677 is IERC20 {
         bytes calldata data
     ) external returns (bool success);
 
-    event TransferToken(
+    event Transfer(
         address indexed from,
         address indexed to,
         uint value,

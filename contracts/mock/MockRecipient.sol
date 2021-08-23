@@ -2,7 +2,6 @@
 pragma solidity 0.8.6;
 
 import "../IERC677Receiver.sol";
-import "hardhat/console.sol";
 
 contract MockRecipient is IERC677Receiver {
     uint public txCount;
@@ -14,8 +13,6 @@ contract MockRecipient is IERC677Receiver {
     ) external override {
         txCount += 1;
         require(keccak256(_data) != keccak256("err"));
-        console.log('MockRecipient txCount');
-        console.log(txCount);
         // for testing: revert if passed "err"
     }
 }
